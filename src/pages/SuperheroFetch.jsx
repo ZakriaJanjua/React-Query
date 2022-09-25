@@ -19,7 +19,7 @@ export default function SuperheroFetch() {
 	return (
 		<>
 			<h3>Fetch</h3>
-			{data.map((hero) => {
+			{data?.map((hero) => {
 				return <p key={hero.id}>{hero.name}</p>;
 			})}
 		</>
