@@ -6,10 +6,22 @@ const fetchSuperheroes = async () => {
 };
 
 export default function SuperheroRQ() {
-	const { isLoading, data } = useQuery('superhero', fetchSuperheroes);
+	const { isLoading, data, isError, error, isFetching } = useQuery(
+		'superhero',
+		fetchSuperheroes,
+		{
+			cacheTime: 100000,
+		}
+	);
+
+	console.log(isLoading, isFetching);
 
 	if (isLoading) {
 		return <h3>Loading...</h3>;
+	}
+
+	if (isError) {
+		return <h3>{error.message}</h3>;
 	}
 
 	return (
