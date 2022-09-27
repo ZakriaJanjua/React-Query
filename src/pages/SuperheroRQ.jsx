@@ -11,6 +11,7 @@ export default function SuperheroRQ() {
 		fetchSuperheroes,
 		{
 			cacheTime: 100000,
+			staleTime: 30000,
 		}
 	);
 
