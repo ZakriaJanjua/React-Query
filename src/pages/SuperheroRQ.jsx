@@ -6,7 +6,7 @@ const fetchSuperheroes = async () => {
 };
 
 export default function SuperheroRQ() {
-	const { isLoading, data, isError, error, isFetching } = useQuery(
+	const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
 		'superhero',
 		fetchSuperheroes,
 		{
@@ -16,10 +16,12 @@ export default function SuperheroRQ() {
 			refetchOnWindowFocus: false, //false true always -- default is true
 			refetchInterval: false, //default is false -- paused when window loses focus
 			refetchIntervalInBackground: false, //default is false -- does not pause when window loses focus
+
+			enabled: false, //default is true
 		}
 	);
 
-	if (isLoading) {
+	if (isLoading || isFetching) {
 		return <h3>Loading...</h3>;
 	}
 
@@ -30,6 +32,7 @@ export default function SuperheroRQ() {
 	return (
 		<>
 			<h3>SuperheroRQ</h3>
+			<button onClick={refetch}>Fetch through React Query</button>
 			{data?.data?.map((hero) => {
 				return <p key={hero.id}>{hero.name}</p>;
 			})}
