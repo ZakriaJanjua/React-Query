@@ -10,12 +10,14 @@ export default function SuperheroRQ() {
 		'superhero',
 		fetchSuperheroes,
 		{
-			cacheTime: 100000,
-			staleTime: 30000,
+			cacheTime: 100000, //default is 5 minutes
+			staleTime: 30000, //default is 0
+			refetchOnMount: false, //false true always -- default is true
+			refetchOnWindowFocus: false, //false true always -- default is true
+			refetchInterval: false, //default is false -- paused when window loses focus
+			refetchIntervalInBackground: false, //default is false -- does not pause when window loses focus
 		}
 	);
-
-	console.log(isLoading, isFetching);
 
 	if (isLoading) {
 		return <h3>Loading...</h3>;
