@@ -11,7 +11,7 @@ export default function SuperheroRQ() {
 
 	const onSuccess = (data) => {
 		console.log('Perform side effect after data fetching');
-		if (data.data.length > 4) {
+		if (data.length > 4) {
 			setPolling(false);
 		}
 	};
@@ -34,6 +34,9 @@ export default function SuperheroRQ() {
 			enabled: true, //default is true
 			onSuccess,
 			onError,
+			select: (data) => {
+				return data?.data?.map((hero) => hero.name);
+			},
 		}
 	);
 
@@ -49,9 +52,12 @@ export default function SuperheroRQ() {
 		<>
 			<h3>SuperheroRQ</h3>
 			<button onClick={refetch}>Fetch through React Query</button>
-			{data?.data?.map((hero) => {
+			{/* {data?.data?.map((hero) => {
 				return <p key={hero.id}>{hero.name}</p>;
-			})}
+			})} */}
+			{data?.map((heroName) => (
+				<p key={heroName}>{heroName}</p>
+			))}
 		</>
 	);
 }
