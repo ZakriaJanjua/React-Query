@@ -1,44 +1,16 @@
-import { useQuery } from 'react-query';
-import axios from 'axios';
-import { useState } from 'react';
-
-const fetchSuperheroes = async () => {
-	return axios.get('http://localhost:5000/superheroes');
-};
+import { useSuperheroesData } from '../hooks/useSuperheroesData';
 
 export default function SuperheroRQ() {
-	const [polling, setPolling] = useState(3000);
-
 	const onSuccess = (data) => {
-		console.log('Perform side effect after data fetching');
-		if (data.length > 4) {
-			setPolling(false);
-		}
+		console.log('Perform side effect after data fetching', data);
 	};
 
 	const onError = (error) => {
 		console.log('Perform side effect after error', error);
 	};
 
-	const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-		'superhero',
-		fetchSuperheroes,
-		{
-			cacheTime: 100000, //default is 5 minutes
-			staleTime: 30000, //default is 0
-			refetchOnMount: false, //false true always -- default is true
-			refetchOnWindowFocus: false, //false true always -- default is true
-			refetchInterval: polling, //default is false -- paused when window loses focus
-			refetchIntervalInBackground: false, //default is false -- does not pause when window loses focus
-
-			enabled: true, //default is true
-			onSuccess,
-			onError,
-			select: (data) => {
-				return data?.data?.map((hero) => hero.name);
-			},
-		}
-	);
+	const { isLoading, data, isError, error, isFetching, refetch } =
+		useSuperheroesData(onSuccess, onError);
 
 	if (isLoading || isFetching) {
 		return <h3>Loading...</h3>;
