@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 const fetchSuperheroes = async () => {
-	return axios.get('http://localhost:5000/superheroes');
+	return await axios.get('http://localhost:5000/superheroes');
 };
 
 export const useSuperheroesData = (onSuccess, onError) => {
@@ -18,7 +18,7 @@ export const useSuperheroesData = (onSuccess, onError) => {
 		onSuccess,
 		onError,
 		select: (data) => {
-			return data?.data?.map((hero) => hero.name);
+			return data?.data?.map((hero) => ({ name: hero.name, id: hero.id }));
 		},
 	});
 };
