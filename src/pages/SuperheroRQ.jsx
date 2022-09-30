@@ -1,5 +1,5 @@
 import { useSuperheroesData } from '../hooks/useSuperheroesData';
-
+import { Link } from 'react-router-dom';
 export default function SuperheroRQ() {
 	const onSuccess = (data) => {
 		console.log('Perform side effect after data fetching', data);
@@ -27,8 +27,15 @@ export default function SuperheroRQ() {
 			{/* {data?.data?.map((hero) => {
 				return <p key={hero.id}>{hero.name}</p>;
 			})} */}
-			{data?.map((heroName) => (
-				<p key={heroName}>{heroName}</p>
+			{data?.map((hero) => (
+				<p key={hero.id}>
+					<Link
+						to={`/rq/${hero.id}`}
+						style={{ textDecoration: 'none', color: 'blue' }}
+					>
+						{hero.name}
+					</Link>
+				</p>
 			))}
 		</>
 	);
