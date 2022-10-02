@@ -25,5 +25,19 @@
          "name": "Ant Man",
          "alterEgo": "John"
       }
+   ],
+   "friends": [
+      {
+         "id": 1,
+         "name": "Chandler"
+      },
+      {
+         "id": 2,
+         "name": "Monica"
+      },
+      {
+         "id": 3,
+         "name": "Ross"
+      }
    ]
 }
