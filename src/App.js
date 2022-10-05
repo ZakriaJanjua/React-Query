@@ -3,6 +3,7 @@ import SuperheroFetch from './pages/SuperheroFetch';
 import SuperheroRQ from './pages/SuperheroRQ';
 import SuperheroRQSingle from './pages/SuperheroRQSingle';
 import ParallelQueries from './pages/ParallelQueries';
+import DynamicParallel from './pages/DynamicParallel';
 import { Route, Routes } from 'react-router-dom';
 import Links from './components/Links';
 function App() {
@@ -14,7 +15,11 @@ function App() {
 				<Route path='/fetch' element={<SuperheroFetch />} />
 				<Route path='/rq/:heroId' element={<SuperheroRQSingle />} />
 				<Route path='/rq' element={<SuperheroRQ />} />
-				<Route path='/parallel' element={<ParallelQueries />} />
+				<Route path='/rq-parallel' element={<ParallelQueries />} />
+				<Route
+					path='/rq-dynamic'
+					element={<DynamicParallel heroIds={[1, 3]} />}
+				/>
 			</Routes>
 		</>
 	);

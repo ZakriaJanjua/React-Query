@@ -14,6 +14,12 @@ export default function Links() {
 			<Link className='link' to='/rq'>
 				RQ
 			</Link>
+			<Link className='link' to='/rq-parallel'>
+				Parallel
+			</Link>
+			<Link className='link' to='/rq-dynamic'>
+				Dynamic
+			</Link>
 		</>
 	);
 }
