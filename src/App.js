@@ -5,6 +5,7 @@ import SuperheroRQSingle from './pages/SuperheroRQSingle';
 import ParallelQueries from './pages/ParallelQueries';
 import DynamicParallel from './pages/DynamicParallel';
 import Dependant from './pages/Dependant';
+import PaginatedQueries from './pages/PaginatedQueries';
 import { Route, Routes } from 'react-router-dom';
 import Links from './components/Links';
 function App() {
@@ -25,6 +26,7 @@ function App() {
 					path='/rq-dependant'
 					element={<Dependant email='quantiphi@quantiphi.com' />}
 				/>
+				<Route path='/rq-paginated' element={<PaginatedQueries />} />
 			</Routes>
 		</>
 	);
