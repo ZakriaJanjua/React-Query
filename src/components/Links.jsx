@@ -4,7 +4,7 @@ import './Links.css';
 
 export default function Links() {
 	return (
-		<>
+		<header>
 			<Link className='link' to='/'>
 				Home
 			</Link>
@@ -20,6 +20,9 @@ export default function Links() {
 			<Link className='link' to='/rq-dynamic'>
 				Dynamic
 			</Link>
-		</>
+			<Link className='link' to='/rq-dependant'>
+				Dependant
+			</Link>
+		</header>
 	);
 }

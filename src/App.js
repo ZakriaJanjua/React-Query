@@ -4,6 +4,7 @@ import SuperheroRQ from './pages/SuperheroRQ';
 import SuperheroRQSingle from './pages/SuperheroRQSingle';
 import ParallelQueries from './pages/ParallelQueries';
 import DynamicParallel from './pages/DynamicParallel';
+import Dependant from './pages/Dependant';
 import { Route, Routes } from 'react-router-dom';
 import Links from './components/Links';
 function App() {
@@ -19,6 +20,10 @@ function App() {
 				<Route
 					path='/rq-dynamic'
 					element={<DynamicParallel heroIds={[1, 3]} />}
+				/>
+				<Route
+					path='/rq-dependant'
+					element={<Dependant email='quantiphi@quantiphi.com' />}
 				/>
 			</Routes>
 		</>

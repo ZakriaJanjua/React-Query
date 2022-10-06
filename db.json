@@ -39,5 +39,21 @@
          "id": 3,
          "name": "Ross"
       }
+   ],
+   "users": [
+      {
+         "id": "quantiphi@quantiphi.com",
+         "channelId": "QuantiPhi"
+      }
+   ],
+   "channel": [
+      {
+         "id": "QuantiPhi",
+         "courses": [
+            "react",
+            "vue",
+            "angular"
+         ]
+      }
    ]
 }
