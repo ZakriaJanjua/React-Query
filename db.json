@@ -55,5 +55,39 @@
             "angular"
          ]
       }
+   ],
+   "colors": [
+      {
+         "id": 1,
+         "label": "red"
+      },
+      {
+         "id": 2,
+         "label": "black"
+      },
+      {
+         "id": 3,
+         "label": "blue"
+      },
+      {
+         "id": 4,
+         "label": "green"
+      },
+      {
+         "id": 5,
+         "label": "grey"
+      },
+      {
+         "id": 6,
+         "label": "yellow"
+      },
+      {
+         "id": 7,
+         "label": "orange"
+      },
+      {
+         "id": 8,
+         "label": "purple"
+      }
    ]
 }

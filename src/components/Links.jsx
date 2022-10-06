@@ -23,6 +23,9 @@ export default function Links() {
 			<Link className='link' to='/rq-dependant'>
 				Dependant
 			</Link>
+			<Link className='link' to='rq-paginated'>
+				Paginated
+			</Link>
 		</header>
 	);
 }
