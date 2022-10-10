@@ -1,8 +1,12 @@
-import { useQuery } from 'react-query';
+import { useQuery, useMutation } from 'react-query';
 import axios from 'axios';
 
 const fetchSuperheroes = async () => {
 	return await axios.get('http://localhost:5000/superheroes');
+};
+
+const addSuperhero = async (hero) => {
+	return axios.post('http://localhost:5000/superheroes', hero);
 };
 
 export const useSuperheroesData = (onSuccess, onError) => {
@@ -21,4 +25,8 @@ export const useSuperheroesData = (onSuccess, onError) => {
 			return data?.data?.map((hero) => ({ name: hero.name, id: hero.id }));
 		},
 	});
+};
+
+export const useAddSuperheroData = () => {
+	return useMutation(addSuperhero);
 };

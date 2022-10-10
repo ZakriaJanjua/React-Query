@@ -1,93 +1,98 @@
 {
-   "superheroes": [
-      {
-         "id": 1,
-         "name": "Batman",
-         "alterEgo": "Bruce Wayne"
-      },
-      {
-         "id": 2,
-         "name": "Superman",
-         "alterEgo": "Clrak Kent"
-      },
-      {
-         "id": 3,
-         "name": "Wonder Woman",
-         "alterEgo": "Lady Dian"
-      },
-      {
-         "id": 4,
-         "name": "Captain America",
-         "alterEgo": "Steve Rogers"
-      },
-      {
-         "id": 5,
-         "name": "Ant Man",
-         "alterEgo": "John"
-      }
-   ],
-   "friends": [
-      {
-         "id": 1,
-         "name": "Chandler"
-      },
-      {
-         "id": 2,
-         "name": "Monica"
-      },
-      {
-         "id": 3,
-         "name": "Ross"
-      }
-   ],
-   "users": [
-      {
-         "id": "quantiphi@quantiphi.com",
-         "channelId": "QuantiPhi"
-      }
-   ],
-   "channel": [
-      {
-         "id": "QuantiPhi",
-         "courses": [
-            "react",
-            "vue",
-            "angular"
-         ]
-      }
-   ],
-   "colors": [
-      {
-         "id": 1,
-         "label": "red"
-      },
-      {
-         "id": 2,
-         "label": "black"
-      },
-      {
-         "id": 3,
-         "label": "blue"
-      },
-      {
-         "id": 4,
-         "label": "green"
-      },
-      {
-         "id": 5,
-         "label": "grey"
-      },
-      {
-         "id": 6,
-         "label": "yellow"
-      },
-      {
-         "id": 7,
-         "label": "orange"
-      },
-      {
-         "id": 8,
-         "label": "purple"
-      }
-   ]
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterEgo": "Clrak Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "Lady Dian"
+    },
+    {
+      "id": 4,
+      "name": "Captain America",
+      "alterEgo": "Steve Rogers"
+    },
+    {
+      "id": 5,
+      "name": "Ant Man",
+      "alterEgo": "John"
+    },
+    {
+      "name": "Flash",
+      "alterEgo": "Barry Allen",
+      "id": 6
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Chandler"
+    },
+    {
+      "id": 2,
+      "name": "Monica"
+    },
+    {
+      "id": 3,
+      "name": "Ross"
+    }
+  ],
+  "users": [
+    {
+      "id": "quantiphi@quantiphi.com",
+      "channelId": "QuantiPhi"
+    }
+  ],
+  "channel": [
+    {
+      "id": "QuantiPhi",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "black"
+    },
+    {
+      "id": 3,
+      "label": "blue"
+    },
+    {
+      "id": 4,
+      "label": "green"
+    },
+    {
+      "id": 5,
+      "label": "grey"
+    },
+    {
+      "id": 6,
+      "label": "yellow"
+    },
+    {
+      "id": 7,
+      "label": "orange"
+    },
+    {
+      "id": 8,
+      "label": "purple"
+    }
+  ]
 }
