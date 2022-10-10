@@ -8,6 +8,7 @@ import Dependant from './pages/Dependant';
 import PaginatedQueries from './pages/PaginatedQueries';
 import { Route, Routes } from 'react-router-dom';
 import Links from './components/Links';
+import InfiniteQueries from './pages/InfiniteQueries';
 function App() {
 	return (
 		<>
@@ -27,6 +28,7 @@ function App() {
 					element={<Dependant email='quantiphi@quantiphi.com' />}
 				/>
 				<Route path='/rq-paginated' element={<PaginatedQueries />} />
+				<Route path='/rq-infinite' element={<InfiniteQueries />} />
 			</Routes>
 		</>
 	);
