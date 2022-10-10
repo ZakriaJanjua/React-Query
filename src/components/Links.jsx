@@ -23,8 +23,11 @@ export default function Links() {
 			<Link className='link' to='/rq-dependant'>
 				Dependant
 			</Link>
-			<Link className='link' to='rq-paginated'>
+			<Link className='link' to='/rq-paginated'>
 				Paginated
+			</Link>
+			<Link className='link' to='/rq-infinite'>
+				Infinite
 			</Link>
 		</header>
 	);
