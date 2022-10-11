@@ -29,6 +29,16 @@
       "name": "Flash",
       "alterEgo": "Barry Allen",
       "id": 6
+    },
+    {
+      "name": "Shazam",
+      "alterEgo": "Billy Banter",
+      "id": 7
+    },
+    {
+      "name": "Cat Woman",
+      "alterEgo": "Selina Kyle",
+      "id": 8
     }
   ],
   "friends": [
