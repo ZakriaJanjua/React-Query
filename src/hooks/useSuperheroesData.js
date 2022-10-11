@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from 'react-query';
+import { useQuery, useMutation, useQueryClient } from 'react-query';
 import axios from 'axios';
 
 const fetchSuperheroes = async () => {
@@ -18,7 +18,7 @@ export const useSuperheroesData = (onSuccess, onError) => {
 		refetchInterval: false, //default is false -- paused when window loses focus
 		refetchIntervalInBackground: false, //default is false -- does not pause when window loses focus
 
-		enabled: false, //default is true
+		// enabled: false, //default is true !important -- if false, query invalidation will not trigger a refetch
 		onSuccess,
 		onError,
 		select: (data) => {
@@ -28,5 +28,16 @@ export const useSuperheroesData = (onSuccess, onError) => {
 };
 
 export const useAddSuperheroData = () => {
-	return useMutation(addSuperhero);
+	const queryClient = useQueryClient();
+	return useMutation(addSuperhero, {
+		onSuccess: (data) => {
+			// queryClient.invalidateQueries('superhero');
+			queryClient.setQueryData('superhero', (oldQueryData) => {
+				return {
+					...oldQueryData,
+					data: [...oldQueryData.data, data.data],
+				};
+			});
+		},
+	});
 };
