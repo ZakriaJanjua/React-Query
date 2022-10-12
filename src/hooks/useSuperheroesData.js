@@ -6,7 +6,7 @@ const fetchSuperheroes = async () => {
 };
 
 const addSuperhero = async (hero) => {
-	return axios.post('http://localhost:5000/superheroes', hero);
+	return axios.post('http://localhost:5000/superheroes1', hero);
 };
 
 export const useSuperheroesData = (onSuccess, onError) => {
@@ -27,17 +27,57 @@ export const useSuperheroesData = (onSuccess, onError) => {
 	});
 };
 
+/*
+export const useAddSuperheroData = () => {
+	const queryClient = useQueryClient();
+	return useMutation(addSuperhero, {
+		onSuccess: () => {
+			queryClient.invalidateQueries('superhero');
+		},
+	});
+};
+*/
+
+/*
 export const useAddSuperheroData = () => {
 	const queryClient = useQueryClient();
 	return useMutation(addSuperhero, {
 		onSuccess: (data) => {
-			// queryClient.invalidateQueries('superhero');
 			queryClient.setQueryData('superhero', (oldQueryData) => {
 				return {
 					...oldQueryData,
 					data: [...oldQueryData.data, data.data],
 				};
 			});
+		},
+	});
+};
+*/
+
+export const useAddSuperheroData = () => {
+	const queryClient = useQueryClient();
+	return useMutation(addSuperhero, {
+		onMutate: async (newHero) => {
+			await queryClient.cancelQueries('superhero');
+			const prevHeroData = queryClient.getQueriesData('superhero');
+			queryClient.setQueryData('superhero', (oldQueryData) => {
+				return {
+					...oldQueryData,
+					data: [
+						...oldQueryData.data,
+						{ id: oldQueryData?.data?.length + 1, ...newHero },
+					],
+				};
+			});
+			return {
+				prevHeroData,
+			};
+		},
+		onError: (_error, _hero, context) => {
+			queryClient.setQueryData('superhero', context.prevHeroData);
+		},
+		onSettled: () => {
+			queryClient.invalidateQueries('superhero');
 		},
 	});
 };
